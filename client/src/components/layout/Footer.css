@@ -1,0 +1,28 @@
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-xl);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer__copy,
+.footer__credit {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.footer__credit a {
+  color: var(--color-accent);
+  transition: opacity var(--transition-fast);
+}
+
+.footer__credit a:hover {
+  opacity: 0.75;
+}
