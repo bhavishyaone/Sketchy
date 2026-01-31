@@ -1,0 +1,19 @@
+{
+  "name": "sketchy-server",
+  "version": "0.1.0",
+  "description": "Node.js + Express backend for Sketchy — Xkali Crowe clone",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
