@@ -1,5 +1,7 @@
 import express from 'express'
 import cors from 'cors'
+import projectRoutes from './routes/projectRoutes.js'
+import contactRoutes from './routes/contactRoutes.js'
 
 const app = express()
 
@@ -13,6 +15,8 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', message: 'Sketchy API is running' })
 })
 
-// TODO: Mount route modules here as we build them out
+// Mount Routes
+app.use('/api/projects', projectRoutes)
+app.use('/api/contact', contactRoutes)
 
 export default app
