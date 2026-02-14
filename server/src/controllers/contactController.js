@@ -25,3 +25,15 @@ export const submitMessage = async (req, res) => {
     res.status(500).json({ message: 'Server Error' })
   }
 }
+
+// @desc    Get all contact messages
+// @route   GET /api/contact
+// @access  Private
+export const getMessages = async (req, res) => {
+  try {
+    const messages = await Message.find({}).sort('-createdAt')
+    res.json(messages)
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' })
+  }
+}
