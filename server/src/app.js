@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import projectRoutes from './routes/projectRoutes.js'
 import contactRoutes from './routes/contactRoutes.js'
+import authRoutes from './routes/authRoutes.js'
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.get('/api/health', (_req, res) => {
 // Mount Routes
 app.use('/api/projects', projectRoutes)
 app.use('/api/contact', contactRoutes)
+app.use('/api/auth', authRoutes)
 
 export default app
 
