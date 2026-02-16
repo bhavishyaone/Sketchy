@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Button from '../components/ui/Button'
 import './Contact.css'
 
@@ -36,7 +37,7 @@ function Contact() {
   }
 
   return (
-    <section className="contact-page">
+    <motion.section className="contact-page" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
       <div className="contact-page__container">
         <div className="contact-page__header">
           <h1 className="contact-page__title">Let's Talk</h1>
@@ -102,7 +103,7 @@ function Contact() {
           </Button>
         </form>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

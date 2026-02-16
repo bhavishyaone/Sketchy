@@ -1,9 +1,15 @@
+import { motion } from 'framer-motion'
 import Button from '../components/ui/Button'
 import './About.css'
 
 function About() {
   return (
-    <section className="about-page">
+    <motion.section 
+      className="about-page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="about-page__container">
         <div className="about-page__image-col">
           <img 
@@ -36,7 +42,7 @@ function About() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
