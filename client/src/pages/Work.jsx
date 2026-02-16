@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import ProjectCard from '../components/ui/ProjectCard'
 import './Work.css'
 
@@ -23,7 +24,12 @@ function Work() {
   }, [])
 
   return (
-    <section className="work-page">
+    <motion.section 
+      className="work-page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="work-page__header">
         <h1 className="work-page__title">Selected Work</h1>
         <p className="work-page__subtitle">A curated collection of recent projects</p>
@@ -43,7 +49,7 @@ function Work() {
           ))}
         </div>
       )}
-    </section>
+    </motion.section>
   )
 }
 
