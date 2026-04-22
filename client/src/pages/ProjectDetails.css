@@ -72,6 +72,32 @@
   margin-bottom: var(--space-xl);
 }
 
+.project-details__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.project-details__tag {
+  display: inline-block;
+  padding: 0.3em 0.85em;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  border-radius: 2px;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.project-details__tag:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
 .project-details__link {
   display: inline-block;
   color: var(--color-text-primary);

@@ -44,6 +44,15 @@ function ProjectDetails() {
           <p className="project-details__description">
             {project.description || 'A comprehensive exploration of form, space, and color. This project reflects the core tenets of our design philosophy—stripping away the unnecessary to reveal pure structural elegance.'}
           </p>
+
+          {project.tags && project.tags.length > 0 && (
+            <div className="project-details__tags">
+              {project.tags.map((tag) => (
+                <span key={tag} className="project-details__tag">{tag}</span>
+              ))}
+            </div>
+          )}
+
           {project.link && (
             <a href={project.link} target="_blank" rel="noreferrer" className="project-details__link">
               Visit Live Project ↗
