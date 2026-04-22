@@ -27,3 +27,44 @@ export const getProjectById = async (req, res) => {
     res.status(500).json({ message: 'Server Error' })
   }
 }
+
+// @desc    Create a new project
+// @route   POST /api/projects
+// @access  Private
+export const createProject = async (req, res) => {
+  try {
+    const { title, category, image, description, link, tags } = req.body
+
+    if (!title || !category || !image) {
+      return res.status(400).json({ message: 'Title, category, and image are required' })
+    }
+
+    const project = await Project.create({
+      title,
+      category,
+      image,
+      description,
+      link,
+      tags: tags || [],
+    })
+
+    res.status(201).json(project)
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' })
+  }
+}
+
+// @desc    Delete a project
+// @route   DELETE /api/projects/:id
+// @access  Private
+export const deleteProject = async (req, res) => {
+  try {
+    const project = await Project.findByIdAndDelete(req.params.id)
+    if (!project) {
+      return res.status(404).json({ message: 'Project not found' })
+    }
+    res.json({ message: 'Project deleted successfully' })
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' })
+  }
+}

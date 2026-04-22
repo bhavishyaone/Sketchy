@@ -1,9 +1,10 @@
 import express from 'express'
-import { getProjects, getProjectById } from '../controllers/projectController.js'
+import { getProjects, getProjectById, createProject, deleteProject } from '../controllers/projectController.js'
+import { protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()
 
-router.route('/').get(getProjects)
-router.route('/:id').get(getProjectById)
+router.route('/').get(getProjects).post(protect, createProject)
+router.route('/:id').get(getProjectById).delete(protect, deleteProject)
 
 export default router

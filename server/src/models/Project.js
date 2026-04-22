@@ -18,6 +18,10 @@ const projectSchema = new mongoose.Schema({
   },
   link: {
     type: String,
+  },
+  tags: {
+    type: [String],
+    default: [],
   }
 }, { timestamps: true })
 
